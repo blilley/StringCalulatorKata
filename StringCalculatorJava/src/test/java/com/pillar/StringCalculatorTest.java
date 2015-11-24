@@ -11,4 +11,10 @@ public class StringCalculatorTest {
         Integer result = StringCalculator.add("");
         assertThat(result, is(0));
     }
+
+    @Test
+    public void add_oneNumber_ReturnsNumber() {
+        Integer result = StringCalculator.add("1");
+        assertThat(result, is(1));
+    }
 }
