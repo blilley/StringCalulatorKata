@@ -1,29 +1,27 @@
 package com.pillar;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Splitter;
 
 public class StringCalculator {
     public static Integer add(String numbers) {
         Guard.notNull(numbers);
 
-        if (numbers.isEmpty())
+        Splitter splitter = Splitter.on(CharMatcher.anyOf(","));
+
+        return splitter.splitToList(numbers)
+                .stream()
+                .mapToInt(StringCalculator::parseIntegers)
+                .sum();
+    }
+
+    private static Integer parseIntegers(String value) {
+        try {
+            return Integer.parseInt(value);
+        }
+        catch (Exception ignored){
             return 0;
-
-        List<Integer> collection = new ArrayList<>();
-        String[] values = numbers.split(",");
-        for (String value : values) {
-            collection.add(Integer.parseInt(value));
         }
-
-
-        Integer sum = 0;
-
-        for (Integer value : collection) {
-            sum += value;
-        }
-
-        return sum;
     }
 
     private static class Guard {
