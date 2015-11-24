@@ -30,4 +30,10 @@ public class StringCalculatorTest {
         Integer result = StringCalculator.add("1");
         assertThat(result, is(1));
     }
+
+    @Test
+    public void add_twoNumbers_ReturnsSum(){
+        Integer result = StringCalculator.add("1,2");
+        assertThat(result, is(3));
+    }
 }
