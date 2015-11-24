@@ -36,4 +36,22 @@ public class StringCalculatorTest {
         Integer result = StringCalculator.add("1,2");
         assertThat(result, is(3));
     }
+
+    @Test
+    public void add_threeNumbers_ReturnsSum(){
+        Integer result = StringCalculator.add("1, 1, 1");
+        assertThat(result, is(3));
+    }
+
+    @Test
+    public void add_twoNumbersWithNewLine_ReturnsSum() {
+        Integer result = StringCalculator.add("1\n2,3");
+        assertThat(result, is(6));
+    }
+
+    @Test
+    public void add_twoNumbersWithNewDelimeter_ReturnsSum() {
+        Integer result = StringCalculator.add("//;\n1;2");
+        assertThat(result, is(3));
+    }
 }
