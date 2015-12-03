@@ -1,7 +1,7 @@
 String Calculator Kata
 TypeScipt and Java
 
-Taken From:
+Taken From: http://osherove.com/tdd-kata-1/
 
 ## Before you start: 
 * Try not to read ahead.
