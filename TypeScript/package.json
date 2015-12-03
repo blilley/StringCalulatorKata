@@ -2,7 +2,7 @@
   "name": "TypeScript",
   "version": "0.0.0",
   "scripts": {
-    "start": "karma test"
+    "start": "./node_modules/karma/bin/karma run"
   },
   "dependencies": {},
   "devDependencies": {

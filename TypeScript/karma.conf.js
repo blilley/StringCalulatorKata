@@ -45,7 +45,7 @@ module.exports = function(config) {
       },
       // extra typing definitions to pass to the compiler (globs allowed)
       typings: [
-        'typings/tsd.d.ts'
+        'jasmine.d.ts'
       ],
       // transforming the filenames
       transformPath: function(path) {
@@ -84,7 +84,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultanous
